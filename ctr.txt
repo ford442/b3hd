@@ -1,0 +1,1 @@
+Placeholder file; cleared when playlist-generator.php is run.
