@@ -12,7 +12,7 @@ If you want to set up your own customized B3HD you can begin by uploading all of
 
 You can replace the default intro graphics simply by replacing the intro.mp4 with another video named intro.mp4.
 
-Clicking the screen will slide into view the time slider for how rapidly the clip switches. The slider's min/max duration can be adjusted by changing /index.php at line 158: "values: {min:.8, max:8.0}".
+Clicking the screen will slide into view the time slider controlling how rapidly the clip switches. The slider's min/max duration can be adjusted by changing /index.php at line 158: "values: {min:.8, max:8.0}".
 
 
 FURTHER DELELOPMENT
