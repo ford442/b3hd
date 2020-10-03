@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="cleartype" content="on">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>B*3*H*D</title>
 <script src="./js/slideout.min.js"></script>
 <script type="text/javascript" src="./js/rSlider.min.js"></script>
 <style>
@@ -215,17 +216,17 @@ rnum = (random * nvids);
 rnum = (rnum / 10000000);
 rnum = Math.round(rnum);
 fp = myvids[rnum][6];
-fp = (fp * 10000);
+fp = (fp * 1000);
 fp = Math.round(fp);
-fp = (fp / 10000);
+fp = (fp / 1000);
 if (fp = 600) {
 fp = 60;
 }
 fp = (fp * 3);
 fp = (1000 / fp);
-fp = (fp * 10000);
+fp = (fp * 1000);
 fp = Math.round(fp);
-fp = (fp / 10000);
+fp = (fp / 1000);
 document.getElementById("frate").innerHTML = fp;
 wi = myvids[rnum][1];
 he = myvids[rnum][2];
