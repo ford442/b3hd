@@ -137,8 +137,8 @@ setTimeout( function () {
 sidefram.innerHTML = '<input type=' + '"te' + 'xt" id' + '="time' + 'slider" /' + '>';
 timeslider = new rSlider({
 target: "#timeslider",
-values: {min:1, max:18.0},
-step: [0.20],
+values: {min:1.0, max:18.0},
+step: [0.2],
 labels: false,
 tooltip: true,
 scale: false,
