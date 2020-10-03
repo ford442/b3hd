@@ -26,4 +26,4 @@ I plan to add BPM (beats per minute) tempo detection using the Web Audio API so 
 ----
 SEE B3HD IN ACTION!
 
-Visit https://b3hd.1ink.us for my project. A batch of videos selected from Adobe's Behance.net catalog.
+Visit https://b3hd.1ink.us for my project. B3HD used on a batch of videos selected from Adobe's Behance.net catalog.
