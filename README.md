@@ -1,4 +1,4 @@
-# B*3*H*D
+# B3HD
 
 
 A GPU.js enabled, WASM based web video player PWA.
