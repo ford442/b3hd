@@ -10,16 +10,10 @@
 ::-webkit-scrollbar {
  display: none;
 }
-.bh{
-text-align: center;
-display: inline-block;
-overflow: hidden;
-/* width: 100%;*/
-}
 #canvas {
  }
 #wrap {
- padding-bottom: 0;
+ padding-top: 0;
  position: absolute;
  top: 50%;
  left: 50%;
@@ -28,17 +22,15 @@ overflow: hidden;
  transform: translateX(-50%) translateY(-50%);
 }
 #wrapper {
- font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+}
 body {
  background-color: black;
  overflow-x: hidden;
  overflow-y: scroll;
- width: 100%;
- height: 100%;
 }
 #brand a,
 p a {
- border: 0px #fff dotted;
+ border: 0px #fff;
  }
 #brand a:focus,
 p a:focus {
@@ -48,23 +40,13 @@ p {
  padding-top: 0em;
 }
 .px-video {
- position: absolute;
  top: 0;
  left: 0;
  margin-top: 0;
- width: 100%;
- height: 100%;
 }
 .px-video-container {
- overflow: hidden;
-  width: 100%;
-  height: 100%;
 }
 .px-video-wrapper {
- position: relative;
- padding-bottom: 56%;
- height: 0;
- z-index: 1;
 }
 .slideout-menu {
  position: fixed;
@@ -85,9 +67,7 @@ p {
  right: 0;
 }
 .slideout-panel {
- position: relative;
  z-index: 1;
- will-change: transform;
  background-color: black;
  min-height: 100vh;
 }
@@ -117,6 +97,8 @@ p {
 <div id="ihig" hidden></div>
 <div id="wid" hidden></div>
 <div id="hig" hidden></div>
+<div id="inhred" hidden></div>
+<var id="hiv">0</var>
 <div id="frate" hidden></div>
 <div id="temptime" hidden>4000</div>
 <div id="frptr" hidden></div>
@@ -128,9 +110,8 @@ p {
 <video hidden muted src="" name="loading" id="loadvid" height="" width="" preload="auto"></video>
 <div id="canvas-parent" class="bh"></div>
 </div></div></div></main>
-
 <script>
-var millisec, sidefram, slideout, timeslider, tem, pan, a, hms, higg, slitime, loopti, he, wi, adr, high, inhre, ihe, rato, iwi, nrato, nvids, myvids, hig, men, di, looptime, rnum, seconds, rndtime, random, loopsecs, endc, loopti, lo, mv, vide;
+var millisec, sidefram, slideout, timeslider, tem, dat, datb, pan, a, hms, higg, slitime, loopti, he, wi, adr, high, inhre, inhrez, ihe, rato, iwi, nrato, nvids, myvids, hig, men, di, looptime, rnum, seconds, rndtime, random, loopsecs, endc, loopti, lo, mv, vide;
 tem = document.getElementById("temptime");
 pan = document.getElementById("panel");
 sidefram = document.getElementById("slideframe");
@@ -155,8 +136,8 @@ setTimeout( function () {
 sidefram.innerHTML = '<input type=' + '"te' + 'xt" id' + '="time' + 'slider" /' + '>';
 timeslider = new rSlider({
 target: "#timeslider",
-values: {min:.8, max:8.0},
-step: [0.1],
+values: {min:1, max:18.0},
+step: [0.20],
 labels: false,
 tooltip: true,
 scale: false,
@@ -187,16 +168,21 @@ wi = myvids[0][1];
 he = myvids[0][2];
 document.getElementById("hig").innerHTML = he;
 document.getElementById("wid").innerHTML = wi;
+inhre = window.innerHeight;
+inhre = Math.round(inhre);
+document.getElementById("inhred").innerHTML = inhre;
 iwi = window.innerWidth;
 rato = ((he / wi) * 10);
 rato = Math.round(rato);
 rato = (rato / 10);
 ihe = (iwi * rato);
 ihe = Math.round(ihe);
-inrhe = (iwi * 0.56);
-high = (ihe - inrhe);
+dat = document.getElementById("inhred");
+datb = document.getElementById("ihig");
+inhrez = dat.innerHTML;
+high = (ihe - dat.innerHTML);
 if (high > 1) {
-ihe = inrhe;
+ihe = dat.innerHTML;
 ihe = Math.round(ihe);
 nrato = (ihe / he);
 nrato = (nrato * 10);
@@ -215,8 +201,12 @@ document.getElementById("myvideo").width = iwi;
 document.getElementById("myvideo").height = ihe;
 document.getElementById("myvideo").play();
 function loada() {
+inhre = window.innerHeight;
+inhre = Math.round(inhre);
+document.getElementById("inhred").innerHTML = inhre;
 looptime = tem.innerHTML;
 loadtime = (looptime * .9);
+loadtime = Math.round(loadtime);
 loopsecs = (looptime / 1000) + ( 2 * (loadtime / 1000));
 loadtime = Math.round(loadtime);
 random = Math.random();
@@ -225,17 +215,17 @@ rnum = (random * nvids);
 rnum = (rnum / 10000000);
 rnum = Math.round(rnum);
 fp = myvids[rnum][6];
-fp = (fp * 100);
+fp = (fp * 10000);
 fp = Math.round(fp);
-fp = (fp / 100);
+fp = (fp / 10000);
 if (fp = 600) {
 fp = 60;
 }
 fp = (fp * 3);
 fp = (1000 / fp);
-fp = (fp * 1000);
+fp = (fp * 10000);
 fp = Math.round(fp);
-fp = (fp / 1000);
+fp = (fp / 10000);
 document.getElementById("frate").innerHTML = fp;
 wi = myvids[rnum][1];
 he = myvids[rnum][2];
@@ -256,7 +246,7 @@ pltime = (pltime / 1000);
 pltime = (pltime * 1000);
 pltime = Math.round(pltime);
 pltime = (pltime / 1000);
-// pltime = (pltime - loopsecs);
+pltime = (pltime - loopsecs);
 function endavoid() {
 pltime = (pltime - .5);
 endc = (seconds - pltime);
@@ -276,11 +266,14 @@ rato = Math.round(rato);
 rato = (rato / 10);
 ihe = (iwi * rato);
 ihe = Math.round(ihe);
-inrhe = (iwi * 0.56);
-high = (ihe - inrhe);
+dat = document.getElementById("inhred");
+inhrez = dat.innerHTML;
+high = (ihe - dat.innerHTML);
 if (high > 1) {
-ihe = inrhe;
-ihe = Math.round(ihe);
+dat = document.getElementById("inhred");
+datb = document.getElementById("ihig");
+ihe = dat.innerHTML;
+datb.innerHTML = ihe;
 nrato = (ihe / he);
 nrato = (nrato * 10);
 nrato = Math.round(nrato);
