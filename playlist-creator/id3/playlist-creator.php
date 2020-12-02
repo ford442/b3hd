@@ -268,8 +268,8 @@ if (isset($_REQUEST['filename'])) {
 			echo '<th>Format</th>';
 			echo '<th>Playtime</th>';
 			echo '<th>Bitrate</th>';
-			echo '<th>Artist</th>';
-			echo '<th>Title</th>';
+			echo '<th>Dimensions</th>';
+			echo '<th>Framerate</th>';
 			if (isset($_REQUEST['ShowMD5']) && GETID3_DEMO_BROWSE_ALLOW_MD5_LINK) {
 				echo '<th>MD5&nbsp;File (File) (<a href="'.htmlentities($_SERVER['PHP_SELF'].'?listdirectory='.rawurlencode(isset($_REQUEST['listdirectory']) ? $_REQUEST['listdirectory'] : '.'), ENT_QUOTES | ENT_SUBSTITUTE, $PageEncoding).'">disable</a>)</th>';
 				echo '<th>MD5&nbsp;Data (File) (<a href="'.htmlentities($_SERVER['PHP_SELF'].'?listdirectory='.rawurlencode(isset($_REQUEST['listdirectory']) ? $_REQUEST['listdirectory'] : '.'), ENT_QUOTES | ENT_SUBSTITUTE, $PageEncoding).'">disable</a>)</th>';
