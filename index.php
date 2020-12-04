@@ -80,30 +80,27 @@ overflow:hidden;
 .slideout-open .slideout-menu{
 display:block;
 }
-</style>
-<link rel="stylesheet" href="./css/rSlider.min.css">
-</head>
+</style><link rel="stylesheet" href="./css/rSlider.min.css"></head>
 <body>
 <h1></h1>
 <nav id="menu">
 <section class="menu-section" id="menu-sections">
-<div style="width:384px;text color:white;">
 B*3*H*D
 *******
 <ul class="menu-section-list">
+<div style="width:384px;text color:white;">
 <div id="slideframe"><input type="text" id="timeslider"/>
 </div>
 </div>
 </ul>
 </section>
 </nav>
-<input type="checkbox" id="di" hidden="true"/>
+<input type="checkbox" id="di" hidden/>
 <div id="iwid" hidden></div>
 <div id="ihig" hidden></div>
 <div id="wid" hidden></div>
 <div id="hig" hidden></div>
 <div id="inhred" hidden></div>
-<var id="hiv" hidden>0</var>
 <div id="frate" hidden></div>
 <div id="temptime" hidden>7000</div>
 <div id="frptr" hidden></div>
@@ -137,11 +134,11 @@ pan.addEventListener("click",function(){
 slo.toggle();
 sfr.innerHTML="";
 setTimeout(function(){
-sfr.innerHTML='<input type='+'"te'+'xt "id'+'="time'+'slider"/'+'>';
+sfr.innerHTML='<input type='+'"te'+'xt"id'+'="time'+'slider"/'+'>';
 tsl=new rSlider({
 target:"#timeslider",
-values:{min:2.500,max:16.000},
-step:[0.50],
+values:{min:0.500,max:12.000},
+step:[0.100],
 labels:false,
 tooltip:true,
 scale:false,
@@ -310,5 +307,4 @@ loada();
 </script>
 <script type="text/javascript" src="./js/gpu-web.js"></script>
 <script type="text/javascript" async src="./js/b3hd.js"></script>
-</body>
-</html>
+</body></html>
