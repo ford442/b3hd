@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="cleartype"content="on">
-<meta name="viewport"content="width=device-width,initial-scale=1.0">
+<meta http-equiv="cleartype" content="on">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>B*3*H*D</title>
-<script type="text/javascript"src="./js/slideout.min.js"></script>
-<script type="text/javascript"src="./js/rSlider.min.js"></script>
+<script type="text/javascript" src="./js/slideout.min.js"></script>
+<script type="text/javascript" src="./js/rSlider.min.js"></script>
 <style>
 ::-webkit-scrollbar{
 display:none;
@@ -80,37 +80,40 @@ overflow:hidden;
 .slideout-open .slideout-menu{
 display:block;
 }
-</style><link rel="stylesheet"href="./css/rSlider.min.css"></head>
+</style>
+<link rel="stylesheet" href="./css/rSlider.min.css">
+</head>
 <body>
+<h1></h1>
 <nav id="menu">
-<section class="menu-section"id="menu-sections">
+<section class="menu-section" id="menu-sections">
+<div style="width:384px;text color:white;">
 B*3*H*D
 *******
 <ul class="menu-section-list">
-<div style="width:384px;text color:white;">
-<div id="slideframe"><input type="text"id="timeslider"/>
+<div id="slideframe"><input type="text" id="timeslider"/>
 </div>
 </div>
 </ul>
 </section>
 </nav>
-<input type="checkbox"id="di"hidden="true"/>
-<div id="iwid"hidden></div>
-<div id="ihig"hidden></div>
-<div id="wid"hidden></div>
-<div id="hig"hidden></div>
-<div id="inhred"hidden></div>
-<var id="hiv">0</var>
-<div id="frate"hidden></div>
-<div id="temptime"hidden>7000</div>
-<div id="frptr"hidden></div>
+<input type="checkbox" id="di" hidden="true"/>
+<div id="iwid" hidden></div>
+<div id="ihig" hidden></div>
+<div id="wid" hidden></div>
+<div id="hig" hidden></div>
+<div id="inhred" hidden></div>
+<var id="hiv" hidden>0</var>
+<div id="frate" hidden></div>
+<div id="temptime" hidden>7000</div>
+<div id="frptr" hidden></div>
 <main id="panel">
 <div id="wrapper">
-<div class="px-video-container"id="myvid">
-<div class="px-video-wrapper"id="wrap">
-<div id="cp"class="bh"></div>
-</div></div></div></main><video hidden muted src=""name="playing"id="myvideo"height=""width=""preload="auto"></video>
-<video hidden muted src=""name="loading"id="loadv"height=""width=""preload="auto"></video>
+<div class="px-video-container" id="myvid">
+<div class="px-video-wrapper" id="wrap">
+<div id="cp" class="bh"></div>
+</div></div></div></main><video hidden muted src="" name="playing" id="myvideo" height="" width="" preload="auto"></video>
+<video hidden muted src="" name="loading" id="loadv" height="" width="" preload="auto"></video>
 <script>
 var mil,sfr,slo,tsl,tem,dat,datb,pan,a,hms,higg,slt,$loo,he,wi,adr,high,inhre,inhrez,ihe,rato,iwi,nrato,nvids,$vids,hig,men,di,$lt,rnum,$sc,$rtm,$rn,$ls,endc,lo,mv,vide;
 tem=document.getElementById("temptime");
@@ -134,11 +137,11 @@ pan.addEventListener("click",function(){
 slo.toggle();
 sfr.innerHTML="";
 setTimeout(function(){
-sfr.innerHTML='<input type='+'"te'+'xt"id'+'="time'+'slider"/'+'>';
+sfr.innerHTML='<input type='+'"te'+'xt "id'+'="time'+'slider"/'+'>';
 tsl=new rSlider({
 target:"#timeslider",
-values:{min:0.500,max:12.000},
-step:[0.100],
+values:{min:2.500,max:16.000},
+step:[0.50],
 labels:false,
 tooltip:true,
 scale:false,
@@ -219,7 +222,6 @@ fp=Math.round(fp);
 fp=fp/1000;
 if(fp=600){
 }
-// fp=fp*6;
 fp=1000/fp;
 fp=fp*1000;
 fp=Math.round(fp);
@@ -299,7 +301,6 @@ vide[0].id=lo;
 vide[1].id=mv;
 document.getElementById("di").click();
 document.getElementById("loadv").pause();
-
 },$ldt);
 setTimeout(function(){
 loada();
@@ -307,6 +308,7 @@ loada();
 }
 loada();
 </script>
-<script type="text/javascript"src="./js/gpu-web.js"></script>
-<script type="text/javascript"async src="./js/b3hd.js"></script>
-</body></html>
+<script type="text/javascript" src="./js/gpu-web.js"></script>
+<script type="text/javascript" async src="./js/b3hd.js"></script>
+</body>
+</html>
