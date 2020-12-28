@@ -3,85 +3,52 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="cleartype" content="on">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>B*3*H*D</title>
-<script type="text/javascript" src="./js/slideout.min.js"></script>
-<script type="text/javascript" src="./js/rSlider.min.js"></script>
+<script type="text/javascript" src=".js/slideout.min.js"></script>
+<script type="text/javascript" src=".js/rSlider.min.js"></script>
 <style>
-::-webkit-scrollbar{
-display:none;
-}
-#canvas{
-}
-#wrap{
-padding-top:0;
-position:absolute;
-top:50%;
-left:50%;
--moz-transform:translateX(-50%)translateY(-50%);
--webkit-transform:translateX(-50%)translateY(-50%);
-transform:translateX(-50%)translateY(-50%);
-}
-#wrapper{
-}
-body{
-background-color:black;
-overflow-x:hidden;
-overflow-y:scroll;
-}
-#brand a,
-p a{
-border:0px #fff;
-}
-#brand a:focus,
-p a:focus{
-outline:none;
-}
-p{
-padding-top:0em;
-}
-.px-video{
-top:0;
-left:0;
-margin-top:0;
-}
-.px-video-container{
-}
-.px-video-wrapper{
-}
-.slideout-menu{
-position:fixed;
-left:0;
-top:0;
-bottom:0;
-right:0;
-z-index:0;
-width:384px;
-overflow-y:scroll;
--webkit-overflow-scrolling:touch;
-display:none;
-}
-.slideout-menu-left{
-left:0;
-}
-.slideout-menu-right{
-right:0;
-}
-.slideout-panel{
-z-index:1;
-background-color:black;
-min-height:100vh;
-}
-.slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel{
-overflow:hidden;
-}
-.slideout-open .slideout-menu{
-display:block;
-}
-</style><link rel="stylesheet" href="./css/rSlider.min.css"></head>
+</style>
+<link rel="stylesheet" href="./css/b3hd.css"></head>
+<link rel="stylesheet" href="./css/rSlider.min.css"></head>
 <body>
+<canvas id="lb" style="
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0px;
+right: 0px;
+width: 100%;
+border: none;
+margin: auto;
+overflow: hidden;
+z-index: 999997;
+padding: 0;
+display: block;
+overflow-y: hidden; 
+overflow-x: hidden;
+height: 100%;"></canvas>
+<iframe
+src="./hex/custom3.html"
+style="
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0px;
+right: 0px;
+width: 100%;
+border: none;
+margin: auto;
+overflow: hidden;
+z-index: 999996;
+padding: 0;
+display: block;
+height: 100%;
+frameborder:0; 
+marginheight:0; 
+marginwidth: 0; 
+overflow-y: hidden; 
+overflow-x: hidden;" id="circle">
+</iframe>
 <h1></h1>
 <nav id="menu">
 <section class="menu-section" id="menu-sections">
@@ -89,7 +56,8 @@ B*3*H*D
 *******
 <ul class="menu-section-list">
 <div style="width:384px;text color:white;">
-<div id="slideframe"><input type="text" id="timeslider"/>
+<div id="slideframe">
+<input type="text" id="timeslider"/>
 </div>
 </div>
 </ul>
@@ -102,17 +70,37 @@ B*3*H*D
 <div id="hig" hidden></div>
 <div id="inhred" hidden></div>
 <div id="frate" hidden></div>
-<div id="temptime" hidden>7000</div>
+<div id="temptime" hidden>3300</div>
 <div id="frptr" hidden></div>
 <main id="panel">
 <div id="wrapper">
 <div class="px-video-container" id="myvid">
 <div class="px-video-wrapper" id="wrap">
-<div id="cp" class="bh"></div>
-</div></div></div></main><video hidden muted src="" name="playing" id="myvideo" height="" width="" preload="auto"></video>
+<div id="cp" class="bh">
+</div></div></div></div></main>
+<video hidden muted src="" name="playing" id="myvideo" height="" width="" preload="auto"></video>
 <video hidden muted src="" name="loading" id="loadv" height="" width="" preload="auto"></video>
 <script>
-var mil,sfr,slo,tsl,tem,dat,datb,pan,a,hms,higg,slt,$loo,he,wi,adr,high,inhre,inhrez,ihe,rato,iwi,nrato,nvids,$vids,hig,men,di,$lt,rnum,$sc,$rtm,$rn,$ls,endc,lo,mv,vide;
+var mil,sfr,slo,tsl,tem,dat,datb,pan,a,hms,rihe,higg,slt,$loo,he,wi,adr,inhre,ihe,rato,iwi,nrato,nvids,$vids,hig,men,di,$lt,rnum,$sc,$rtm,$rn,$ls,endc,lo,mv,vide;
+function dra()
+{
+var canv = document.getElementById('lb');
+if (canv.getContext)
+{
+var ctx = canv.getContext('2d'); 
+ctx.beginPath();
+ctx.fillStyle = "black";
+var bh=document.getElementById('wrap').style.height-4;
+var squ=window.innerHeight * .04;
+var top=window.innerHeight/333;
+squ=Math.round(squ);
+top=Math.round(top);
+var rh=window.innerWidth-squ;
+ctx.fillRect(0, 0, squ, window.innerHeight);
+ctx.fillRect(rh, 0, squ, window.innerHeight);
+ctx.fillRect(0, 0, window.innerWidth, top);
+ctx.fillRect(0, bh, window.innerWidth, squ*10);}};
+parent.document.getElementById('di').addEventListener('click', function() {dra();});
 tem=document.getElementById("temptime");
 pan=document.getElementById("panel");
 sfr=document.getElementById("slideframe");
@@ -120,29 +108,21 @@ function grab$lt(){
 $lt=tem.innerHTML;
 $lt=$lt*10;
 $lt=Math.round($lt);
-$lt=$lt/10;
-}
+$lt=$lt/10;}
 grab$lt();
 slo=new Slideout({
 "panel":document.getElementById("panel"),
 "menu":document.getElementById("menu"),
 "padding":384,
 "tolerance":70,
-"easing":"cubic-bezier(.32,2,.55,.27)"
-});
+"easing":"cubic-bezier(.32,2,.55,.27)"});
 pan.addEventListener("click",function(){
 slo.toggle();
 sfr.innerHTML="";
 setTimeout(function(){
 sfr.innerHTML='<input type='+'"te'+'xt"id'+'="time'+'slider"/'+'>';
-tsl=new rSlider({
-target:"#timeslider",
-values:{min:0.500,max:12.000},
-step:[0.100],
-labels:false,
-tooltip:true,
-scale:false,
-});
+tsl=new rSlider({target:"#timeslider",values:{min:0.5,max:12},
+step:[0.5],labels:false,tooltip:true,scale:false,});
 grab$lt();
 slt=$lt/1000;
 slt=slt*10;
@@ -150,18 +130,10 @@ slt=Math.round(slt);
 slt=slt/10;
 tsl.setValues(slt);
 document.getElementById("menu").addEventListener("click",function(){
-$loo=tsl.getValue();
-$loo=$loo*10;
-$loo=Math.round($loo);
-$loo=$loo/10;
-$loo=$loo*1000;
-tem.innerHTML=$loo;
-});
-setTimeout(function(){
-slt=tem.innerHTML;
-},8);
-},16);
-});
+$loo=tsl.getValue();$loo=$loo*10;$loo=Math.round($loo);
+$loo=$loo/10;$loo=$loo*1000;
+tem.innerHTML=$loo;});
+setTimeout(function(){slt=tem.innerHTML;},8);},16);});
 nvids=<?php $cntr=file_get_contents("ctr.txt");echo "$cntr";?>;
 $vids=<?php $cnt=file_get_contents("vids.txt");echo "$cnt";?>;
 adr=$vids[0][0];
@@ -172,27 +144,15 @@ document.getElementById("wid").innerHTML=wi;
 inhre=window.innerHeight;
 inhre=Math.round(inhre);
 document.getElementById("inhred").innerHTML=inhre;
-iwi=window.innerWidth;
-rato=(he/wi)*100;
+rato=(wi/he)*100;
 rato=Math.round(rato);
 rato=rato/100;
-ihe=iwi*rato;
+ihe=window.innerHeight;
 ihe=Math.round(ihe);
+iwi=ihe*rato;
 dat=document.getElementById("inhred");
 datb=document.getElementById("ihig");
-inhrez=dat.innerHTML;
-high=ihe-dat.innerHTML;
-if(high>1){
-ihe=dat.innerHTML;
-ihe=Math.round(ihe);
-nrato=ihe/he;
-nrato=nrato*100;
-nrato=Math.round(nrato);
-nrato=nrato/100;
-iwi=wi*nrato;
-iwi=Math.round(iwi);
-};
-higg=ihe+"px";
+higg=inhre+"px";
 document.getElementById("ihig").innerHTML=ihe;
 document.getElementById("iwid").innerHTML=iwi;
 document.getElementById("wrap").style.lineheight=higg;
@@ -218,7 +178,7 @@ fp=fp*1000;
 fp=Math.round(fp);
 fp=fp/1000;
 if(fp=600){
-}
+fp=60;}
 fp=1000/fp;
 fp=fp*1000;
 fp=Math.round(fp);
@@ -249,38 +209,25 @@ $plt=$plt-1;
 endc=$sc-$plt;
 if(endc<$ls){
 endavoid();
-}else{};
-};
+}else{};};
 function ifend(){
 endc=$sc-$plt;
 if(endc<$ls){
-endavoid();
-}
-};
+endavoid();}};
 ifend();
-rato=(he/wi)*100;
+ihe=window.innerHeight;
+ihe=Math.round(ihe);
+rato=(ihe/he)*100;
 rato=Math.round(rato);
 rato=rato/100;
-ihe=iwi*rato;
-ihe=Math.round(ihe);
+iwi=wi*rato;
+if (iwi<ihe) {nrato=ihe/iwi;iwi=ihe;ihe=iwi*nrato;};
 dat=document.getElementById("inhred");
-inhrez=dat.innerHTML;
+inhre=dat.innerHTML;
 high=ihe-dat.innerHTML;
-if(high>1){
-dat=document.getElementById("inhred");
-datb=document.getElementById("ihig");
-ihe=dat.innerHTML;
-datb.innerHTML=ihe;
-nrato=ihe/he;
-nrato=nrato*100;
-nrato=Math.round(nrato);
-nrato=nrato/100;
-iwi=wi*nrato;
-iwi=Math.round(iwi);
-};
-higg=ihe+"px";
+window.scroll(0,0);
 setTimeout(function(){
-},$ldt);
+higg=inhre+"px";},$ldt);
 vide=document.querySelectorAll("video");
 document.getElementById("ihig").innerHTML=ihe;
 document.getElementById("iwid").innerHTML=iwi;
@@ -297,14 +244,10 @@ lo=vide[1].id;
 vide[0].id=lo;
 vide[1].id=mv;
 document.getElementById("di").click();
-document.getElementById("loadv").pause();
+//document.getElementById("loadv").pause();
 },$ldt);
 setTimeout(function(){
-loada();
-},$lt);
-}
-loada();
-</script>
+loada();},$lt);}
+loada();</script>
 <script type="text/javascript" src="./js/gpu-web.js"></script>
-<script type="text/javascript" async src="./js/b3hd.js"></script>
-</body></html>
+<script type="text/javascript" async src="./js/b3hd.js"></script></body></html>
