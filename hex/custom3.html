@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Draw a circle</title>
+<style>
+::-webkit-scrollbar{
+display:none;
+}
+</style>
+</head>
+<body onload="draw();">
+<canvas id="circle" width="" height=""></canvas>
+<script>
+function draw()
+{
+var hhi = parent.window.innerHeight;
+var rec = parent.document.getElementById("iwid").innerHTML;
+var hh = parent.window.innerHeight;
+hh = Math.round(hh);
+var rec = parent.window.innerWidth;
+var mhh = hh;
+var mrec = rec;
+rec = mrec;
+hhi = Math.round(hhi);
+rec = Math.round(rec);
+document.getElementById('circle').width = rec;
+document.getElementById('circle').height = hh;
+var rr = ((hhi) / 2);
+rr = Math.round(rr);
+var canvas = document.getElementById('circle');
+if (canvas.getContext)
+{
+var ctx = canvas.getContext('2d'); 
+var mh = (rr + ((hh - hhi) / 2)) ;
+var mw = ((rec-hhi)/2) + rr;
+mw = Math.round(mw);
+mh = Math.round(mh);
+ctx.beginPath();
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, parent.window.innerWidth, parent.window.innerHeight);
+ctx.globalCompositeOperation = 'destination-out';
+ctx.arc(mw-5, mh-5, rr-10, 0, 2 * Math.PI, false);
+ctx.fill();
+}
+}
+parent.document.getElementById('di').addEventListener('click', function() {draw();});
+</script>
+</body>
+</html>
