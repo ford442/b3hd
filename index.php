@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta http-equiv="cleartype" content="on">
 <title>B*3*H*D</title>
-<script type="text/javascript" src=".js/slideout.min.js"></script>
-<script type="text/javascript" src=".js/rSlider.min.js"></script>
+<script type="text/javascript" src="./js/slideout.min.js"></script>
+<script type="text/javascript" src="./js/rSlider.min.js"></script>
 <style>
 </style>
 <link rel="stylesheet" href="./css/b3hd.css"></head>
@@ -48,6 +48,22 @@ marginheight:0;
 marginwidth: 0; 
 overflow-y: hidden; 
 overflow-x: hidden;" id="circle">
+</iframe><iframe
+src="./hex/custom.html"
+style="
+overflow-y: hidden; 
+overflow-x: hidden;
+position: fixed;
+top: 0;
+bottom: 0px;
+right: 0px;
+width: 100%;
+border: none;
+margin: 0;
+overflow: hidden;
+z-index: 999999;
+height: 100vh;
+" id="hex">
 </iframe>
 <h1></h1>
 <nav id="menu">
@@ -250,4 +266,4 @@ setTimeout(function(){
 loada();},$lt);}
 loada();</script>
 <script type="text/javascript" src="./js/gpu-web.js"></script>
-<script type="text/javascript" async src="./js/b3hd.js"></script></body></html>
+<script type="text/javascript" async src="./js/x131.js"></script></body></html>
