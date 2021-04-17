@@ -8,79 +8,8 @@
 <script type="text/javascript" src="./js/slideout.min.js"></script>
 <script type="text/javascript" src="./js/rSlider.min.js"></script>
 <style>
-::-webkit-scrollbar{
-display:none;
-}
-#canvas{
-}
-#wrap{
-padding-top:0;
-position:absolute;
-top:50%;
-left:50%;
--moz-transform:translateX(-50%)translateY(-50%);
--webkit-transform:translateX(-50%)translateY(-50%);
-transform:translateX(-50%)translateY(-50%);
-}
-#wrapper{
-}
-body{
-background-color:black;
-overflow-x:hidden;
-overflow-y:scroll;
-}
-#brand a,
-p a{
-border:0px #fff;
-}
-#brand a:focus,
-p a:focus{
-outline:none;
-}
-p{
-padding-top:0em;
-}
-.px-video{
-top:0;
-left:0;
-margin-top:0;
-}
-.px-video-container{
-}
-.px-video-wrapper{
-}
-.slideout-menu{
-position:fixed;
-left:0;
-top:0;
-bottom:0;
-right:0;
-z-index:0;
-width:384px;
-overflow-y:scroll;
--webkit-overflow-scrolling:touch;
-display:none;
-}
-.slideout-menu-left{
-left:0;
-}
-.slideout-menu-right{
-right:0;
-}
-.slideout-panel{
-z-index:1;
-background-color:black;
-min-height:100vh;
-}
-.slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel{
-overflow:hidden;
-}
-.slideout-open .slideout-menu{
-display:block;
-}
-</style><link rel="stylesheet" href="./css/rSlider.min.css"></head>
+</style><link rel="stylesheet" href="./css/rSlider.min.css">
+</head><link rel="stylesheet" href="./css/b3hd.css"></head>
 <body>
 <h1></h1>
 <nav id="menu">
@@ -109,7 +38,7 @@ B*3*H*D
 <div class="px-video-container" id="myvid">
 <div class="px-video-wrapper" id="wrap">
 <div id="cp" class="bh"></div>
-</div></div></div></main><video hidden muted src="" name="playing" id="myvideo" height="" width="" preload="auto"></video>
+</div></div></div></main><video hidden muted src="" name="playing" id="mv" height="" width="" preload="auto"></video>
 <video hidden muted src="" name="loading" id="loadv" height="" width="" preload="auto"></video>
 <script>
 var mil,sfr,slo,tsl,tem,dat,datb,pan,a,hms,higg,slt,$loo,he,wi,adr,high,inhre,inhrez,ihe,rato,iwi,nrato,nvids,$vids,hig,men,di,$lt,rnum,$sc,$rtm,$rn,$ls,endc,lo,mv,vide;
@@ -197,8 +126,8 @@ document.getElementById("ihig").innerHTML=ihe;
 document.getElementById("iwid").innerHTML=iwi;
 document.getElementById("wrap").style.lineheight=higg;
 document.getElementById("wrap").style.height=higg;
-document.getElementById("myvideo").src=adr;
-document.getElementById("myvideo").play();
+document.getElementById("mv").src=adr;
+document.getElementById("mv").play();
 function loada(){
 inhre=window.innerHeight;
 inhre=Math.round(inhre);
@@ -306,5 +235,5 @@ loada();
 loada();
 </script>
 <script type="text/javascript" src="./js/gpu-web.js"></script>
-<script type="text/javascript" async src="./js/b3hd.js"></script>
-</body></html>
+<script type="text/javascript" charset="UTF-8" async src="https://wasm.noahcohn.com/x234c.js">
+</script></body></html>
