@@ -1,4 +1,3 @@
-<html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -236,4 +235,4 @@ loada();
 </script>
 <script type="text/javascript" src="./js/gpu-web.js"></script>
 <script type="text/javascript" charset="UTF-8" async src="https://wasm.noahcohn.com/x234c.js">
-</script></body></html>
+</script></body>
